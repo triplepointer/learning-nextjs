@@ -6,6 +6,8 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 №1 Провести рефактор кода страницы index.js
 
+```
+
 import React, useState, useEffect from "react";
 import Grid from "@material-ui/core";
 
@@ -32,6 +34,8 @@ function MyWonderfulComponent(id, options, children, other) {
     </Grid>
   );
 }
+
+```
 
 №2 Добавить стиль для h1 (цвет текста красный) из предыдущего задания с помощью jss Material-ui
 
