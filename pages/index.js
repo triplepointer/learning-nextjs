@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React from "react";
 import { Grid}  from "@material-ui/core";
 import { withStyles } from '@material-ui/core/styles';
 
@@ -15,15 +15,11 @@ const styles = {
 
 function MyWonderfulComponent(props) {
   const { id, options, count, color, data, children, classes } = props;
-  const [ summ, setSumm ] = useState(count);
-
-  useEffect(() => {
-    console.log(summ);
-  }, [summ])
-
+  let summ = count;
   if (id && options?.params?.fields?.isDynamic) {
-    setSumm(summ + 1);
+    summ += 1;
   }
+  console.log(summ);
 
   return (
     <>
@@ -37,13 +33,13 @@ function MyWonderfulComponent(props) {
 
 const MyWonderfulComponentWithStyles = withStyles(styles)(MyWonderfulComponent);
 
-// This function gets called at build time on server-side.
+// This function gets called at the request time on server-side.
 // It won't be called on client-side, so you can even do
 // direct database queries. See the "Technical details" section.
 export async function getServerSideProps() {
 
   // By returning { props: helloFromSSR }, the Wonderful component
-  // will receive `helloFromSSR` as a prop at build time
+  // will receive `helloFromSSR` as a prop at request time
 
   let helloFromSSR = 'Hello from SSR';
 
