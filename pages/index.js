@@ -3,7 +3,7 @@ import { Grid}  from "@material-ui/core";
 import { withStyles } from '@material-ui/core/styles';
 
 export default function Page({helloFromSSR}) {
-  return <MyWonderfulComponentWithStyles id="id" options="options" count="count" color="color" data="data">I'm text from a component{helloFromSSR}</MyWonderfulComponentWithStyles>
+  return <MyWonderfulComponentWithStyles id="id" options="options" count={0} color="color" data="data">I'm text from a component{helloFromSSR}</MyWonderfulComponentWithStyles>
 }
 
 // We can inject some CSS into the DOM.
